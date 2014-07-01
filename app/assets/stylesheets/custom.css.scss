@@ -28,6 +28,13 @@ $grayLight: #999;
 $grayDarker: #222;
 $gray: #555;
 
+$darkBlue: #1B2253; /*#0C1236;*/
+$paleOrange: #FFC799;
+$darkRed: #2F0002;
+$mediumRed: #630105;
+$lightPink: #EC9FA2;
+$paleWhite: #FDFDFD;
+$mutedBlue: #5872A9;
 /* universal */
 
 html {
@@ -36,6 +43,7 @@ html {
 
 body {
   padding-top: 60px;
+  background-color: $mutedBlue;
 }
 
 section {
@@ -49,8 +57,19 @@ textarea {
 .center {
   width: 60%;
   text-align: center;
+  margin: 0px auto;
+  /*background-color: $grayLight;*/
   h1 {
     margin-bottom: 10px;
+    color: white;
+  }
+}
+
+a {
+  color: $paleWhite;
+  &:hover{
+    color: $paleWhite;
+    text-decoration: underline;
   }
 }
 
@@ -83,6 +102,9 @@ p {
 
 
 /* header */
+header{
+  /*max-height: 35 px;*/
+}
 
 #logo {
   float: left;
@@ -105,23 +127,19 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover {
-      color: $grayDarker;
-    }
-  }
+  border-top: 1px solid $paleWhite;
+  color: $paleWhite;
   small {
     float: left;
+    color: $grayLight;
   }
   ul {
     float: right;
     list-style: none;
+    margin-right: 20px;
     li {
       float: left;
-      margin-left: 10px;
+      margin-left: 15px;
     }
   }
 }
@@ -129,6 +147,7 @@ footer {
 /* Navbar */
 
 nav {
+  background-color: $paleWhite;
 	ul {
     float: right;
     list-style: none;
@@ -141,4 +160,25 @@ nav {
 
 .navbar-inner {
 	margin: 0px;
+}
+
+/* Panels  */
+
+.panel{
+  border: 2px solid $grayDarker;
+  border-radius: 15px;
+  .panel-heading{
+    background-color: $grayDarker;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+  }
+  a.btn{
+    background-color: $grayMediumLight;
+    color:$grayDarker;
+    &:hover{
+      background-color: $grayDarker;
+      color: white;
+    }
+
+  }
 }

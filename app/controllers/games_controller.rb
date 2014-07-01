@@ -9,7 +9,7 @@ class GamesController < ApplicationController
   def index
 
     #Game Hub page
-    @games = Game.all
+    # @games = Game.all
   end
 
 
