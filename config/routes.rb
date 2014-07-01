@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get '/' => 'static_pages#login'
-
-  resources :users
-  resources :games
+  get '/gamehub' => 'games#index'
+  get '/leaderboard' => 'users#index'
+  get '/account' => 'users#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

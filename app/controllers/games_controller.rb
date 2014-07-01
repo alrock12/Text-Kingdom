@@ -10,7 +10,6 @@ class GamesController < ApplicationController
 
     #Game Hub page
     @games = Game.all
-    @user = User.first
   end
 
 

@@ -8,10 +8,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.first
+    # @user = User.first
     ##lead to user home page
   end
 
+  def index
+    # @users = User.all
+  end
 
   def destroy
     ##how to destroy user
