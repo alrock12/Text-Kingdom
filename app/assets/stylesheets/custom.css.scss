@@ -49,6 +49,7 @@ textarea {
 .center {
   width: 60%;
   text-align: center;
+  margin: 0px auto;
   h1 {
     margin-bottom: 10px;
   }
@@ -141,4 +142,23 @@ nav {
 
 .navbar-inner {
 	margin: 0px;
+}
+
+.genres {
+	div {
+		color: white;
+	}
+	#fantasy {
+		background-image: url('http://images6.fanpop.com/image/photos/32600000/Fantasy-fantasy-32624354-1920-1080.jpg');
+	}
+	#mystery {
+		background-image: url('http://explosivemlm.com/wp-content/uploads/2010/11/mystery-shopping.jpg');
+	}
+	#dungeon {
+		background-image: url('http://previewcf.turbosquid.com/Preview/2014/05/18__20_00_00/004_1.jpgd08b1f5f-f96d-4822-938f-bb5149cab051Large.jpg');
+	}
+}
+
+.search {
+	width: 20%;
 }
