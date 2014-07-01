@@ -163,22 +163,43 @@ nav {
 }
 
 .genres {
-	div {
-		color: white;
-	}
 	#fantasy {
 		background-image: url('http://images6.fanpop.com/image/photos/32600000/Fantasy-fantasy-32624354-1920-1080.jpg');
+		background-position: center;
+		background-size: cover;
 	}
 	#mystery {
-		background-image: url('http://explosivemlm.com/wp-content/uploads/2010/11/mystery-shopping.jpg');
+		background-image: url('http://d2buyft38glmwk.cloudfront.net/media/images/canonical/mast-sherlock3-personality-icon-high-res.jpg');
+		background-position: center;
+		background-size: cover;
 	}
 	#dungeon {
 		background-image: url('http://previewcf.turbosquid.com/Preview/2014/05/18__20_00_00/004_1.jpgd08b1f5f-f96d-4822-938f-bb5149cab051Large.jpg');
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+.genre-panel {
+	color: white;
+	border-style: solid;
+	border-color: $grayDarker;
+	border-radius: 8px;
+	height: 200px;
+	margin: 5px;
+
+	h1 {
+		color: white;
+	}
+
+	:hover {
+		opacity: 0.4;
 	}
 }
 
 .search {
 	width: 20%;
+	display: inline-block;
 }
 
 /* Panels  */

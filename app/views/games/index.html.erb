@@ -4,16 +4,18 @@
 	<h1> Gamehub page </h1>
 
 	<form class="search" role="search">
-  		<div class="form-group">
+  		<div class="search-component form-group">
     		<input type="text" class="form-control" placeholder="Search">
   		</div>
-  		<button type="submit" class="btn btn-default">Submit</button>
+  		<button type="submit" class="search-component btn btn-default">Find</button>
 	</form>
 
-	<div class="container genres">
-		<div class="genre-panel" id="fantasy"><h2>Fantasy</h2></div>
-		<div class="genre-panel" id="mystey"><h2>Mystery</h2></div>
-		<div class="genre-panel" id="dungeon"><h2>Dungeon</h2></div>
+	<div class="genres panel-body">
+	    <div class="row">
+			<div class="col-md-4"><div id="fantasy" class="genre-panel"><h1>Fantasy</h1></div></div>
+			<div class="col-md-4"><div id="mystery" class="genre-panel"><h1>Mystery</h1></div></div>
+			<div class="col-md-4"><div id="dungeon" class="genre-panel"><h1>Dungeon</h1></div></div>
+		</div>
 	</div>
 	
 	<div class="panel panel-default newest">
