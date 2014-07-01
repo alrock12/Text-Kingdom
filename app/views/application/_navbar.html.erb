@@ -1,9 +1,18 @@
 <!-- Nav bar helper -->
 <!-- inject with  #render 'navbar' -->
 
-<div class='navbar'>
-    <li>Account</li>
-    <li>GameHub</li>
-    <li>LeaderBoard</li>
-    <li>Logout</li>
-</div>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "sample app", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Account",    '#' %></li>
+          <li><%= link_to "GameHub",    '#' %></li>
+          <li><%= link_to "Leaderboard", '#' %></li>
+          <li><%= link_to "Logout", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
