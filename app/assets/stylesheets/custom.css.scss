@@ -80,10 +80,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
+  font-size: 3.25em;
+  letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
+  font-weight: 700;
 }
 
 h2 {
@@ -204,7 +205,7 @@ nav {
 
 /* Panels  */
 
-.panel{
+.panel, .user-profile{
   border: 2px solid $grayDarker;
   border-radius: 15px;
   .panel-heading{
@@ -220,5 +221,16 @@ nav {
       color: white;
     }
 
+  }
+}
+
+/*Table*/
+
+table{
+  th{
+    text-align:center;
+  }
+  .plays, .rating, .prog, .options{
+    width: 80px;
   }
 }

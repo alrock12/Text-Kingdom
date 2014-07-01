@@ -1,4 +1,51 @@
 <%= render 'navbar' %>
 <div class="center">
-<h1>Individual User Page</h1>
+
+  <div class="user-profile">
+    <ul class= "profile-left">
+      Picture
+      <li>Change Account Image</li>
+      <li>Change Password</li>
+    </ul>
+    <div class="profile-right ">
+      <table class="table">
+        <tr>
+        <th>Game Stats</th>
+        </tr>
+        <tr>
+        <td><%= link_to "Upload a New Game", '#', class: "upload-game btn" %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel panel-default user-played-games">
+    <div class="panel-heading">
+      <h3 class="panel-title">My Played Games</h3>
+    </div>
+    <!-- Table -->
+    <table class="table">
+    <tr>
+      <th class="title">Title</th>
+      <th class="author">Author</th> 
+      <th class="plays">Plays</th>
+      <th class="rating"> Rating</th>
+      <th class="prog">Progress</th>
+    </tr>
+
+    <!-- Pull subsequent rows from db -->
+    <tr>
+      <td>Dungeon</td>
+      <td>Amy117</td> 
+      <td>94</td>
+      <td>8</td>
+      <td>100%</td>
+      <td><%= link_to "Finish!", '#', class: "play-now btn" %></td>
+    </tr>
+      </table>
+  </div>
+
+
+
+
 </div>
