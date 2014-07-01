@@ -7,8 +7,8 @@
       <%= link_to "sample app", '#', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Account",    '#' %></li>
-          <li><%= link_to "GameHub",    '#' %></li>
+          <li><%= link_to "Account", user_path(@user) %></li>
+          <li><%= link_to "GameHub",    games_path %></li>
           <li><%= link_to "Leaderboard", '#' %></li>
           <li><%= link_to "Logout", '#' %></li>
         </ul>

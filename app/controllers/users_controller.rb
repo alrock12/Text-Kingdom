@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.first
     ##lead to user home page
   end
 
