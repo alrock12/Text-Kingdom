@@ -65,7 +65,8 @@ class UsersController < ApplicationController
 
     #could be optimized?
     def update_ranks
-      
+      @ranked_auths = User.top_authors
+      @ranked_plays = User.top_players
     end
 
 end

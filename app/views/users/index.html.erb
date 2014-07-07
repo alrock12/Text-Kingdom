@@ -21,7 +21,7 @@
 
 		<%= will_paginate %>
 		<!-- Pull subsequent rows from db -->
-		<% @users.each do |user| %>
+		<% @ranked_plays.each do |user| %>
 			<tr>
 			  <td>Rank</td>
 			  <td><%= user.username %></td> 
@@ -53,7 +53,7 @@
 
 		<%= will_paginate %>
 		<!-- Pull subsequent rows from db -->
-		<% @users.each do |user| %>
+		<% @ranked_auths.each do |user| %>
 			<tr>
 			  <td><%= user.username %></td>
 			  <td>Plays</td> 

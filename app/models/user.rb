@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 
   before_create :create_remember_token
 
+  scope :top_authors, -> { select("users.id, count(games.id) AS games_count").order("games_count DESC") }
+
+  scope :top_players, -> { select("users.id, count(experiences.id) AS experience_count").order("experience_count DESC") }
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
