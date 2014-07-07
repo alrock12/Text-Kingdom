@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update]
+  before_action :update_ranks, only: [:index]
 
   def new
     @user = User.new
@@ -61,4 +62,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
+
+    #could be optimized?
+    def update_ranks
+      
+    end
+
 end
