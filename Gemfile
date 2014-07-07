@@ -33,7 +33,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 #Factory for database
-gem 'faker','1.1.2'
+gem 'faker','1.4.1'
 
 # Use unicorn as the app server
 # gem 'unicorn'
