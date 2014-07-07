@@ -32,6 +32,19 @@ namespace :db do
                      description: description,
                      genre: genre)
       end
+
+      ##user experiences/plays
+      games_available = Game.count
+
+      exp_num = rand(10)
+      (exp_num).times do |i|
+        rating = rand(10)
+        progress = rand(100)
+        game = rand(games_available)
+        user.experiences.create!(game_id: game,
+                                 rating: rating,
+                                 progress: progress)
+      end
     end
   end
 end
