@@ -1,4 +1,11 @@
 <%= render 'navbar' %>
 <div class="center">
 <h1> LeaderBoard </h1>
+<%= will_paginate %>
+<% @users.each do |user| %>
+  <%= user.username %>
+  <p> hola? <p>   
+<% end %>
+<%= will_paginate %>
+
 </div>

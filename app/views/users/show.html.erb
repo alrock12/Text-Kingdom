@@ -4,8 +4,9 @@
   <div class="user-profile">
     <ul class= "profile-left">
       Picture
-      <li>Change Account Image</li>
-      <li>Change Password</li>
+      <%if current_user? (@user) %>
+      <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn' %>
+      <% end %>
     </ul>
     <div class="profile-right ">
       <table class="table">
