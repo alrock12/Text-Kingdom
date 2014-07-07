@@ -11,6 +11,7 @@
 	  </div>
 
 	  <!-- Table -->
+		<%= will_paginate %>
 	  <table class="table">
 		<tr>
 		  <th>Rank</th>
@@ -19,7 +20,6 @@
 		  <th class="rating">Total Score</th>
 		</tr>
 
-		<%= will_paginate %>
 		<!-- Pull subsequent rows from db -->
 		<% @ranked_plays.each do |user| %>
 			<tr>
@@ -29,8 +29,8 @@
 			  <td>Score?</td>
 			</tr>
 		<% end %>
-		<%= will_paginate %>
   	  </table>
+		<%= will_paginate %>
 </div>
 
 <div class="panel panel-default newest">
@@ -42,6 +42,7 @@
 	  </div>
 
 	  <!-- Table -->
+	  <%= will_paginate %>
 	  <table class="table">
 		<tr>
 		  <th>Username</th>
@@ -51,7 +52,7 @@
 		  <th></th>
 		</tr>
 
-		<%= will_paginate %>
+	
 		<!-- Pull subsequent rows from db -->
 		<% @ranked_auths.each do |user| %>
 			<tr>
@@ -62,8 +63,8 @@
 			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
 			</tr>
 		<% end %>
-		<%= will_paginate %>
   	  </table>
+		<%= will_paginate %>
 </div>
 
 </div>

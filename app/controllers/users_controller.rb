@@ -23,14 +23,14 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate(page: params[:page], per_page: 10)
   end
 
-  def destroy
-    ##how to destroy user
+  # def destroy
+  #   how to destroy user
 
-    redirect_to users_path
-  end
+  #   redirect_to users_path
+  # end
 
   def edit
     @user = User.find(params[:id])
