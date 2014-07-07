@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+#Factory for database
+gem 'faker','1.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
