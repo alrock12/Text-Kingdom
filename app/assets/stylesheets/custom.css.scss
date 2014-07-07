@@ -164,38 +164,36 @@ nav {
 }
 
 .genres {
+
 	#fantasy {
 		background-image: url('http://images6.fanpop.com/image/photos/32600000/Fantasy-fantasy-32624354-1920-1080.jpg');
-		background-position: center;
-		background-size: cover;
 	}
 	#mystery {
 		background-image: url('http://d2buyft38glmwk.cloudfront.net/media/images/canonical/mast-sherlock3-personality-icon-high-res.jpg');
-		background-position: center;
-		background-size: cover;
+
 	}
 	#dungeon {
 		background-image: url('http://previewcf.turbosquid.com/Preview/2014/05/18__20_00_00/004_1.jpgd08b1f5f-f96d-4822-938f-bb5149cab051Large.jpg');
-		background-position: center;
-		background-size: cover;
 	}
 }
 
 .genre-panel {
+  background-position: center;
+  background-size: cover;
 	color: white;
-	border-style: solid;
-	border-color: $grayDarker;
+  border: 2px solid $grayDarker;
 	border-radius: 8px;
 	height: 200px;
 	margin: 5px;
+  opacity: .9;
 
-	h1 {
+  &:hover{
+    opacity: 0.4;
+  }
+
+	h1:hover{
 		color: white;
-	}
-
-	:hover {
-		opacity: 0.4;
-	}
+  }
 }
 
 .search {
