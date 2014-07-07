@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 10)
+    @author_table = @ranked_auths.paginate(page: params[:page], per_page: 10)
+    @player_table = @ranked_plays.paginate(page: params[:page], per_page: 10)
   end
 
   # def destroy
