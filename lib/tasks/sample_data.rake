@@ -20,7 +20,9 @@ namespace :db do
                           password_confirmation: 'password')
 
       ##user games
-      15.times do |m|
+
+      game_num = rand(15)
+      (game_num).times do |m|
         title = Faker::Commerce.color.capitalize + ' ' +  Faker::Address.country
         link = Faker::Internet.url('textkingdom.com/games')
         description = Faker::Lorem.paragraph
