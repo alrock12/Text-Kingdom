@@ -38,4 +38,9 @@ module UsersHelper
   end
 
 
+  def num_games_played(user)
+    user.experiences.uniq.count
+  end
+
+
 end

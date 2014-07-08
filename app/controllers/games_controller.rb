@@ -8,9 +8,9 @@ class GamesController < ApplicationController
 
   def index
     #Game Hub page
-    @game_newest = Game.order(created_at: :desc)
-    @game_week = Game.where("created_at >= :lastweek", { lastweek: (Time.now - 7.days) }).joins(:experiences).group("experiences.user_id").order("count(experiences.user_id) DESC").paginate(page: params[:page], per_page: 10)
-    @game_year = Game.where("created_at >= :lastyear", { lastyear: (Time.now - 365.days) }).joins(:experiences).group("experiences.user_id").order("count(experiences.user_id) DESC").paginate(page: params[:page], per_page: 10) 
+    @game_newest = Game.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @game_week = Game.games_week.paginate(page: params[:page], per_page: 10)
+    @game_year = Game.games_year.paginate(page: params[:page], per_page: 10) 
   end
 
   def show

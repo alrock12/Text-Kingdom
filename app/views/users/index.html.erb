@@ -20,11 +20,11 @@
 		</tr>
 
 		<!-- Pull subsequent rows from db -->
-		<% @player_table.each do |user| %>
+		<% @player_table.each_with_index do |user, i| %>
 			<tr>
-			  <td>Rank</td>
+			  <td><%= (i+1).to_s %> </td>
 			  <td><%= user.username %></td> 
-			  <td>Games Played</td>
+			  <td><%= num_games_played(user) %></td>
 			  <td>Score?</td>
 			</tr>
 		<% end %>

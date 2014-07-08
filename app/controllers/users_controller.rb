@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, except: [:new, :create]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :update_ranks, only: [:index]
+  before_action :signed_in_user,  except: [:new, :create]
+  before_action :correct_user,      only: [:edit, :update]
+  before_action :update_ranks,      only: [:index]
 
   def new
     @user = User.new
@@ -66,8 +66,8 @@ class UsersController < ApplicationController
 
     #could be optimized?
     def update_ranks
-      @ranked_auths = User.top_authors
-      @ranked_plays = User.top_players 
+      @ranked_auths = User.author_plays
+      @ranked_plays = User.user_plays 
     end
 
 end

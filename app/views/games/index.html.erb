@@ -46,7 +46,7 @@
 			</tr>
 		<% end %>
   	  </table>
-  	  <%= will_paginate @game_newest%>
+  	  <%= will_paginate @game_newest %>
 
 	</div>
 	
@@ -58,7 +58,7 @@
 	    Panel content
 	  </div>
 
-	  <%= will_paginate %>
+	  <%= will_paginate @game_week %>
 	  <!-- Table -->
 	  <table class="table">
 		<tr>
@@ -79,7 +79,7 @@
 			</tr>
 		<% end %>
   	  </table>
-  	  <%= will_paginate %>
+  	  <%= will_paginate @game_week %>
 	</div>
 	
 	<div class="panel panel-default top-year">
@@ -90,7 +90,7 @@
 	    Panel content
 	  </div>
 
-	  <%= will_paginate%>
+	  <%= will_paginate @game_year %>
 	  <!-- Table -->
 	  <table class="table">
 		<tr>
@@ -111,7 +111,7 @@
 			</tr>
 		<% end %>
   	  </table>
-  	  <%= will_paginate  %>
+  	  <%= will_paginate  @game_year %>
 	</div>
 
 </div>
