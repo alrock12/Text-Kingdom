@@ -28,16 +28,17 @@ class User < ActiveRecord::Base
                            count }
 
   #returns ordered array of users based on number of plays of their games
-  scope :author_plays, -> { joins(games: :experiences).
-                            group("users.game_id.experiences.game_id").
-                            order("count(users.game_id.experiences.game_id) DESC") }
+  scope :author_plays, -> { joins(:games).
+                            group("games.user_id").
+                            order("count() DESC") }
 
   #returns ordered array of users based on number of plays
   scope :user_plays, -> { joins(:experiences).
                            group("experiences.user_id").
-                           order("count(experiences.user_id) DESC") }
+                           order("count() DESC") }
 
-  private
+
+   private
 
     def create_remember_token
       self.remember_token = User.digest(User.new_remember_token)

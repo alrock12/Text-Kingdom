@@ -40,7 +40,7 @@
 		<% @game_newest.each do |game| %>
 			<tr>
 			  <td><%= game.title %></td>
-			  <td><%= game.user %></td> 
+			  <td><%= game.user.username %></td> 
 			  <td><%= rating(game) %></td>
 			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
 			</tr>
@@ -73,7 +73,7 @@
 		<% @game_week.each do |game| %>
 			<tr>
 			  <td><%= game.title %></td>
-			  <td><%= game.user %></td> 
+			  <td><%= game.user.username %></td> 
 			  <td><%= rating(game) %></td>
 			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
 			</tr>
@@ -105,7 +105,7 @@
 		<% @game_year.each do |game| %>
 			<tr>
 			  <td><%= game.title %></td>
-			  <td><%= game.user %></td> 
+			  <td><%= game.user.username %></td> 
 			  <td><%= rating(game) %></td>
 			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
 			</tr>
