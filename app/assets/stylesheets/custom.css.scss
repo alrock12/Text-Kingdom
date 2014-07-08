@@ -43,7 +43,7 @@ textarea {
 }
 
 .center {
-  width: 60%;
+  min-width: 60%;
   text-align: center;
   margin: 0px auto;
   /*background-color: $grayLight;*/
@@ -156,6 +156,9 @@ nav {
 .panel, .user-profile{
   border: 2px solid $grayDarker;
   border-radius: 15px;
+  min-width: 600px;
+  max-width: 1000px;
+  margin: 60px auto;
   .panel-heading{
     background-color: $grayDarker;
     color: white;
