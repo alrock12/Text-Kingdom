@@ -26,7 +26,7 @@
 	    Panel content
 	  </div>
 
-	  <%= will_paginate %>
+	  <%= will_paginate @game_newest %>
 	  <!-- Table -->
 	  <table class="table">
 		<tr>
@@ -43,11 +43,11 @@
 			  <td><%= game.title %></td>
 			  <td><%= game.user %></td> 
 			  <td><%= rating(game) %></td>
-			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
+			  <td><%= link_to "Play!", '/game/' + game.id.to_s, class: "play-now btn" %></td>
 			</tr>
 		<% end %>
   	  </table>
-  	  <%= will_paginate %>
+  	  <%= will_paginate @game_newest %>
 
 	</div>
 	
@@ -59,7 +59,7 @@
 	    Panel content
 	  </div>
 
-	  <%= will_paginate %>
+	  <%= will_paginate @game_week %>
 	  <!-- Table -->
 	  <table class="table">
 		<tr>
@@ -76,11 +76,11 @@
 			  <td><%= game.title %></td>
 			  <td><%= game.user %></td> 
 			  <td><%= rating(game) %></td>
-			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
+			  <td><%= link_to "Play!", '/game/' + game.id.to_s, class: "play-now btn" %></td>
 			</tr>
 		<% end %>
   	  </table>
-  	  <%= will_paginate %>
+  	  <%= will_paginate @game_week %>
 	</div>
 	
 	<div class="panel panel-default top-year">
@@ -91,7 +91,7 @@
 	    Panel content
 	  </div>
 
-	  <%= will_paginate %>
+	  <%= will_paginate @game_year %>
 	  <!-- Table -->
 	  <table class="table">
 		<tr>
@@ -108,11 +108,11 @@
 			  <td><%= game.title %></td>
 			  <td><%= game.user %></td> 
 			  <td><%= rating(game) %></td>
-			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
+			  <td><%= link_to "Play!", '/game/' + game.id.to_s, class: "play-now btn" %></td>
 			</tr>
 		<% end %>
   	  </table>
-  	  <%= will_paginate %>
+  	  <%= will_paginate @game_year %>
 	</div>
 
 </div>

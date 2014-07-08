@@ -1,0 +1,26 @@
+<h1>Make a Game!</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@game) do |f| %>
+
+      <%= render 'shared/game_error_messages' %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+
+      <%= f.label :link %>
+      <%= f.text_field :link %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+ 
+
+      <%= f.label :genre %>
+      <%= f.text_field :genre %>
+
+      <%= f.submit "Create Game", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -13,16 +13,18 @@
         <tr>
         <th>Game Stats</th>
         </tr>
+        <%if current_user? (@user) %>
         <tr>
-        <td><%= link_to "Upload a New Game", '#', class: "upload-game btn" %></td>
+        <td><%= link_to "Upload a New Game", '/create', class: "upload-game btn" %></td>
         </tr>
+        <% end %>
       </table>
     </div>
   </div>
 
   <div class="panel panel-default user-played-games">
     <div class="panel-heading">
-      <h3 class="panel-title">My Played Games</h3>
+      <h3 class="panel-title">Recently Played</h3>
     </div>
     <!-- Table -->
     <table class="table">
@@ -46,7 +48,31 @@
       </table>
   </div>
 
+  <div class="panel panel-default user-played-games">
+    <div class="panel-heading">
+      <h3 class="panel-title">My Games</h3>
+    </div>
+    <!-- Table -->
+    <table class="table">
+    <tr>
+      <th class="title">Title</th>
+      <th class="author">Author</th> 
+      <th class="plays">Plays</th>
+      <th class="rating"> Rating</th>
+      <th class="prog">Progress</th>
+    </tr>
 
+    <!-- Pull subsequent rows from db -->
+    <tr>
+      <td>Dungeon</td>
+      <td>Amy117</td> 
+      <td>94</td>
+      <td>8</td>
+      <td>100%</td>
+      <td><%= link_to "Finish!", '#', class: "play-now btn" %></td>
+    </tr>
+      </table>
+  </div>
 
 
 </div>

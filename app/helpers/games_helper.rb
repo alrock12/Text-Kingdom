@@ -4,7 +4,7 @@ module GamesHelper
       count = 0
       game.experiences.each do |experience|
         sum += experience.rating
-        count++
+        count += 1
       end
 
       if count == 0

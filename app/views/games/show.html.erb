@@ -1,0 +1,23 @@
+<%= render 'navbar' %>
+<div class="center">
+
+  <div class="user-profile">
+    <ul class= "profile-left">
+      Picture
+      <%if current_user? (@game.user) %>
+      <%= link_to "Edit Game", edit_game_path(@game), class: 'btn' %>
+      <% end %>
+    </ul>
+    <div class="profile-right ">
+      <table class="table">
+        <tr>
+        <th>Game Stats</th>
+        </tr>
+        <tr>
+          <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

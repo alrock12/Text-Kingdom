@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
   get '/gamehub' => 'games#index'
+  
+  resources :games
+  match '/create', to: 'games#new', via: 'get'
+  match '/game/:id', to: 'games#show', via: 'get'
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
