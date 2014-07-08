@@ -19,8 +19,6 @@ module UsersHelper
     end
   end
 
-
-
   def top_game(user)
     highest_rated_game = user.games[0]
     if !highest_rated_game.nil?
@@ -35,10 +33,13 @@ module UsersHelper
     end
   end
 
-
   def num_games_played(user)
     user.experiences.uniq.count
   end
 
+  def games_played(user)
+    game_ids = Experience.where(user: user.id).pluck("game_id")
+    return Game.where(:id => game_ids)
+  end
 
 end

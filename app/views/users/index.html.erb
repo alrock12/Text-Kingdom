@@ -23,7 +23,7 @@
 		<% @player_table.each_with_index do |user, i| %>
 			<tr>
 			  <td><%= (i+1).to_s %> </td>
-			  <td><%= user.username %></td> 
+			  <td><%= link_to user.username, user_path(user) %></td> 
 			  <td><%= num_games_played(user) %></td>
 			  <td>Score?</td>
 			</tr>

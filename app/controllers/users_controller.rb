@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @games_played = games_played(@user)
   end
 
   def index
@@ -68,7 +69,8 @@ class UsersController < ApplicationController
     #could be optimized?
     def update_ranks
       # @ranked_auths = User.author_plays
-      @ranked_auths = User.all.sort { |user| total_plays_of_author(user) }
+      ranked_auths = User.all.to_a.sort_by! { |user| total_plays_of_author(user) }
+      @ranked_auths = ranked_auths.reverse
       @ranked_plays = User.user_plays 
     end
 
