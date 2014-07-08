@@ -1,27 +1,23 @@
 module UsersHelper
   #for authoring
 
-  def total_plays(user)
-    sum = 0
-    user.games.each do |game|
-      sum += game.experiences.count
-    end
-    sum
+  def total_plays_of_author(user)
+   user.games.joins(:experiences).
+              group("experiences.game_id").
+              count.
+              values.
+              inject(0,:+)
   end
 
-  def avg_ratings(user)
-    sum = 0
-    n = 0
-    user.games.each do |game|
-      game.experiences.each do |play|
-        sum += play.rating 
-        n += 1
-      end
+  def avg_ratings_of_author(user)
+    ratings_arr = user.games.joins(:experiences).group("experiences.game_id").average(:rating).values
+    if ratings_arr == []
+      return '---'
+    else
+      avg = (ratings_arr.inject(0, :+))/(ratings_arr.length)
+      return avg.round(1)
     end
-    n != 0? avg = (sum/n).round(1): avg = 0.0  
   end
-
-
 
   def top_game(user)
     highest_rated_game = user.games[0]
@@ -37,5 +33,13 @@ module UsersHelper
     end
   end
 
+  def num_games_played(user)
+    user.experiences.uniq.count
+  end
+
+  def games_played(user)
+    game_ids = Experience.where(user: user.id).pluck("game_id")
+    return Game.where(:id => game_ids)
+  end
 
 end

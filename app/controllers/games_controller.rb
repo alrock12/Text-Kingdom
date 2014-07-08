@@ -23,30 +23,8 @@ class GamesController < ApplicationController
   def index
     #Game Hub page
     @game_newest = Game.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-    @game_week = #Game.#where("created_at >= :lastweek", 
-                 # { lastweek: (Time.now - 7.days) }).
-                  # joins(:experiences).
-                  # group("experiences.game_id").
-                  # order("count(experiences.game_id) DESC").
-                  # paginate(page: params[:page], per_page: 10)
-
-                 #Game.where("created_at >= :lastweek", { lastweek: (Time.now - 7.days) }).find_each do |game|
-
-
-                 Game.joins(:experiences).
-                 where("experiences.created_at < ?", (Time.now - 7.days) ).
-                 group("experiences.game_id").
-                  order("count(experiences.game_id) DESC").
-                  paginate(page: params[:page], per_page: 10)
-                 #Game.joins(:experiences).where("experiences.created_at < ?", (Time.now - 365.days) ).
-
-    @game_year = Game.#where("created_at >= :lastyear", 
-                  #{ lastyear: (Time.now - 365.days) }).
-                  joins(:experiences).
-                  where("experiences.created_at < ?", (Time.now - 365.days) ).
-                  group("experiences.game_id").
-                  order("count(experiences.game_id) DESC").
-                  paginate(page: params[:page], per_page: 10) 
+    @game_week = Game.games_week.paginate(page: params[:page], per_page: 10)
+    @game_year = Game.games_year.paginate(page: params[:page], per_page: 10) 
   end
 
   def show

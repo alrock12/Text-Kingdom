@@ -1,4 +1,3 @@
-<%= render 'navbar' %>
 <div class="center">
 
 	<h1> GameHub</h1>
@@ -41,7 +40,7 @@
 		<% @game_newest.each do |game| %>
 			<tr>
 			  <td><%= game.title %></td>
-			  <td><%= game.user %></td> 
+			  <td><%= game.user.username %></td> 
 			  <td><%= rating(game) %></td>
 			  <td><%= link_to "Play!", '/game/' + game.id.to_s, class: "play-now btn" %></td>
 			</tr>
@@ -74,7 +73,7 @@
 		<% @game_week.each do |game| %>
 			<tr>
 			  <td><%= game.title %></td>
-			  <td><%= game.user %></td> 
+			  <td><%= game.user.username %></td> 
 			  <td><%= rating(game) %></td>
 			  <td><%= link_to "Play!", '/game/' + game.id.to_s, class: "play-now btn" %></td>
 			</tr>
@@ -106,7 +105,7 @@
 		<% @game_year.each do |game| %>
 			<tr>
 			  <td><%= game.title %></td>
-			  <td><%= game.user %></td> 
+			  <td><%= game.user.username %></td> 
 			  <td><%= rating(game) %></td>
 			  <td><%= link_to "Play!", '/game/' + game.id.to_s, class: "play-now btn" %></td>
 			</tr>

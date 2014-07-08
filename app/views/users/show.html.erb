@@ -1,4 +1,3 @@
-<%= render 'navbar' %>
 <div class="center">
 
   <div class="user-profile">
@@ -37,14 +36,16 @@
     </tr>
 
     <!-- Pull subsequent rows from db -->
+    <% @games_played.each do |game| %>
     <tr>
-      <td>Dungeon</td>
-      <td>Amy117</td> 
+      <td><%= game.title %></td>
+      <td><%= game.user.username %></td> 
       <td>94</td>
       <td>8</td>
       <td>100%</td>
       <td><%= link_to "Finish!", '#', class: "play-now btn" %></td>
     </tr>
+    <% end %>
       </table>
   </div>
 
