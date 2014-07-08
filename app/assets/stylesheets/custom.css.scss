@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import 'constants';
 
 /*body,html{
   background-color: black;
@@ -21,20 +22,7 @@
 	background-color: red;
 }*/
 
-/* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
-$grayLight: #999;
-$grayDarker: #222;
-$gray: #555;
-
-$darkBlue: #1B2253; /*#0C1236;*/
-$paleOrange: #FFC799;
-$darkRed: #2F0002;
-$mediumRed: #630105;
-$lightPink: #EC9FA2;
-$paleWhite: #FDFDFD;
-$mutedBlue: #5872A9;
 /* universal */
 
 html {
@@ -163,44 +151,6 @@ nav {
 	margin: 0px;
 }
 
-.genres {
-
-	#fantasy {
-		background-image: url('http://images6.fanpop.com/image/photos/32600000/Fantasy-fantasy-32624354-1920-1080.jpg');
-	}
-	#mystery {
-		background-image: url('http://d2buyft38glmwk.cloudfront.net/media/images/canonical/mast-sherlock3-personality-icon-high-res.jpg');
-
-	}
-	#dungeon {
-		background-image: url('http://previewcf.turbosquid.com/Preview/2014/05/18__20_00_00/004_1.jpgd08b1f5f-f96d-4822-938f-bb5149cab051Large.jpg');
-	}
-}
-
-.genre-panel {
-  background-position: center;
-  background-size: cover;
-	color: white;
-  border: 2px solid $grayDarker;
-	border-radius: 8px;
-	height: 200px;
-	margin: 5px;
-  opacity: .9;
-
-  &:hover{
-    opacity: 0.4;
-  }
-
-	h1:hover{
-		color: white;
-  }
-}
-
-.search {
-	width: 20%;
-	display: inline-block;
-}
-
 /* Panels  */
 
 .panel, .user-profile{
@@ -211,6 +161,9 @@ nav {
     color: white;
     border-radius: 10px 10px 0px 0px;
   }
+  a{
+    color: black;
+  }
   a.btn{
     background-color: $grayMediumLight;
     color:$grayDarker;
@@ -218,9 +171,27 @@ nav {
       background-color: $grayDarker;
       color: white;
     }
-
   }
 }
+
+/*Pagination */
+
+.pagination{
+  ul{
+    list-style: none;
+    margin: 0 auto;
+    li {
+      display:inline-block;
+      min-width: 25px;
+    }
+    a:hover{
+      text-decoration: none;
+      color:$grayLight;
+    }
+  }
+}
+
+
 
 /*Table*/
 
