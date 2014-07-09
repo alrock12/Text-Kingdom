@@ -5,19 +5,31 @@
     <ul class= "profile-left">
       Picture
       <%if current_user? (@game.user) %>
-      <%= link_to "Edit Game", edit_game_path(@game), class: 'btn' %>
+        <%= link_to "Edit Game", edit_game_path(@game), class: 'btn' %>
       <% end %>
     </ul>
-    <div class="profile-right ">
+    <div class="profile-left">
       <table class="table">
         <tr>
         <th>Game Stats</th>
         </tr>
-        <tr>
-          <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
-        </tr>
       </table>
     </div>
-  </div>
 
+    <div class="profile-right">
+      <%= form_for(@experience) do |f| %>
+
+        <%= f.label :rating %>
+        <%= f.number_field :rating, in: 1..10, value: @experience.rating %>
+
+        <%= f.label :progress %>
+        <%= f.number_field :progress, in: 1..100, value: @experience.progress %>
+
+        <%= f.hidden_field :user, value: current_user %>
+        <%= f.hidden_field :game, value: @game %>
+
+        <%= f.submit "Save", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 </div>
