@@ -2,21 +2,28 @@
 <div class="center">
 
   <div class="user-profile">
-    <ul class= "profile-left">
-      Picture
+    <div class= "profile-left">
+      <div class="name"><%= @game.title %></div>
       <%if current_user? (@game.user) %>
         <%= link_to "Edit Game", edit_game_path(@game), class: 'btn' %>
       <% end %>
-    </ul>
-    <div class="profile-left">
+
       <table class="table">
         <tr>
-        <th>Game Stats</th>
+          <th>Rating</th>
+          <th>Plays</th>
+        </tr>
+        <tr>
+          <td><%= rating(@game) %>/10</td>
+          <td><%= game_total_plays(@game) %>%</td>
         </tr>
       </table>
     </div>
 
     <div class="profile-right">
+
+      <img src='http://i.kinja-img.com/gawker-media/image/upload/s--F_SVgFM9--/c_fit,fl_progressive,q_80,w_636/18kgudf97suzupng.png'>
+
       <%= form_for(@experience) do |f| %>
 
         <%= f.label :rating %>
