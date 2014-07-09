@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/gamehub' => 'games#index'
   
   resources :games
+  resources :experiences
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

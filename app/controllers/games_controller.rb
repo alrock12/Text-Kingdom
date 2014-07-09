@@ -18,7 +18,8 @@ class GamesController < ApplicationController
    end
 
    def show
-    @game = Game.find(4)
+    @game = Game.find(params[:id])
+    @experience = Experience.find_by(user: current_user, game: @game) || Experience.new(rating: 0, progress: 0, game: @game, user: current_user)
    end
 
   def index
