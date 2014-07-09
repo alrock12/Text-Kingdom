@@ -44,8 +44,8 @@
     <tr>
       <td><%= game.title %></td>
       <td><%= link_to game.user.username, user_path(game.user) %></td> 
-      <td>94</td>
-      <td>8</td>
+      <td><%= plays(game) %></td>
+      <td><%= rating(game) %></td>
       <td>100%</td>
       <% if current_user? (@user) %>
       <td><%= link_to "Finish!", game_path(game), class: "play-now btn" %></td>
@@ -76,8 +76,8 @@
     <tr>
       <td><%= link_to game.title, game_path(game) %></td>
       <td><%= game.user.username %></td> 
-      <td>94</td>
-      <td>8</td>
+      <td><%= plays(game) %></td>
+      <td><%= rating(game) %></td>
     </tr>
     <% end %>
       </table>
