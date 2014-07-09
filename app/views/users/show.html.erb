@@ -47,7 +47,12 @@
       <td>94</td>
       <td>8</td>
       <td>100%</td>
+      <% if current_user? (@user) %>
       <td><%= link_to "Finish!", game_path(game), class: "play-now btn" %></td>
+      <% else %>
+      <td><%= link_to "Play!", game_path(game), class: "play-now btn" %></td>
+      <% end %>
+
     </tr>
     <% end %>
       </table>
