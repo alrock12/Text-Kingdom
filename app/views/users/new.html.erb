@@ -1,32 +1,40 @@
+<div class="center">
 <h1>Sign up</h1>
 
-<div class="row">
+<div class="center form-container">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
 
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%= f.label :first_name, class: 'label' %>
+      <%= f.text_field :first_name, class: 'input' %>
+      <br>
 
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+      <%= f.label :last_name, class: 'label' %>
+      <%= f.text_field :last_name, class: 'input' %>
+      <br>
 
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+      <%= f.label :username, class: 'label' %>
+      <%= f.text_field :username, class: 'input' %>
+      <br>
  
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.label :email, class: 'label' %>
+      <%= f.text_field :email, class: 'input' %>
+      <br>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label :password, class: 'label' %>
+      <%= f.password_field :password, class: 'input' %>
+      <br>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :password_confirmation, "Confirmation", class: 'label' %>
+      <%= f.password_field :password_confirmation, class: 'input' %>
+      <br>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary sign-in" %>
     <% end %>
   </div>
+</div>
 </div>
