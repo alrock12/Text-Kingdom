@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @games_played = games_played(@user)
+    @games_authored = authored_games(@user)
   end
 
   def index

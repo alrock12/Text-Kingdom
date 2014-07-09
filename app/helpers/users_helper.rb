@@ -56,4 +56,8 @@ module UsersHelper
     return Game.where(:id => game_ids)
   end
 
+  def authored_games(user)
+    Game.where(user: user)
+  end
+
 end

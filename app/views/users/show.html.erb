@@ -1,12 +1,16 @@
 <div class="center">
 
   <div class="user-profile">
-    <ul class= "profile-left">
-      Picture
+    <div class= "profile-left">
+      <div class='name'><%= @user.username %></div>
+      <%= @user.first_name unless @user.first_name.nil? %>
+      <%= @user.last_name unless @user.last_name.nil? %>
+      <br>
+      <br>
       <%if current_user? (@user) %>
       <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn' %>
       <% end %>
-    </ul>
+    </div>
     <div class="profile-right ">
       <table class="table">
         <tr>
@@ -14,7 +18,7 @@
         </tr>
         <%if current_user? (@user) %>
         <tr>
-        <td><%= link_to "Upload a New Game", '/create', class: "upload-game btn" %></td>
+        <td><%= link_to "Upload a New Game", new_game_path, class: "upload-game btn" %></td>
         </tr>
         <% end %>
       </table>
@@ -39,11 +43,11 @@
     <% @games_played.each do |game| %>
     <tr>
       <td><%= game.title %></td>
-      <td><%= game.user.username %></td> 
+      <td><%= link_to game.user.username, user_path(game.user) %></td> 
       <td>94</td>
       <td>8</td>
       <td>100%</td>
-      <td><%= link_to "Finish!", '#', class: "play-now btn" %></td>
+      <td><%= link_to "Finish!", game_path(game), class: "play-now btn" %></td>
     </tr>
     <% end %>
       </table>
@@ -60,18 +64,17 @@
       <th class="author">Author</th> 
       <th class="plays">Plays</th>
       <th class="rating"> Rating</th>
-      <th class="prog">Progress</th>
     </tr>
 
     <!-- Pull subsequent rows from db -->
+     <% @games_authored.each do |game| %>
     <tr>
-      <td>Dungeon</td>
-      <td>Amy117</td> 
+      <td><%= link_to game.title, game_path(game) %></td>
+      <td><%= game.user.username %></td> 
       <td>94</td>
       <td>8</td>
-      <td>100%</td>
-      <td><%= link_to "Finish!", '#', class: "play-now btn" %></td>
     </tr>
+    <% end %>
       </table>
   </div>
 

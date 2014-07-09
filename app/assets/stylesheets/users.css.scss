@@ -9,14 +9,14 @@
   width: 100%;
 }
 
-ul.profile-left{
+.profile-left{
+  .name {
+    font-size: 20px;
+    font-weight: 700;
+  }
   float:left;
   text-align: left;
-  padding:0px;
-  margin: 0px;
-  li{
-    list-style: none;
-  }
+  padding-left:10px;
 }
 
 
