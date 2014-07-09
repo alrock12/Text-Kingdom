@@ -14,6 +14,9 @@ class ExperiencesController < ApplicationController
 private
 
     def experience_params
-      params.require(:experience).permit(:user, :game, :rating, :progress)
+      hash = params.require(:experience).permit(:user, :game, :rating, :progress)
+      hash[:user] = User.find(hash[:user])
+      hash[:game] = Game.find(hash[:game])
+      return hash
     end
 end
