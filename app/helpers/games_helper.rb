@@ -6,4 +6,8 @@ module GamesHelper
   def plays(game)
     game.experiences.count
   end
+
+  def game_total_plays (game)
+      game.experiences.count
+  end
 end
