@@ -4,11 +4,22 @@ class ExperiencesController < ApplicationController
 	    @experience = Experience.new(experience_params)
 	    if @experience.save
 	      flash[:success] = "Thanks for playing!"
-	      redirect_to @experience.game
+	      redirect_to @experience.user
 	    else
 	      flash[:failure] = "Save Failed. Try again."
 	      redirect_to @experience.game
 	    end
+    end
+
+      def update
+      @experience = Experience.new(experience_params)
+      if @experience.save
+        flash[:success] = "Thanks for playing!"
+        redirect_to @experience.user
+      else
+        flash[:failure] = "Save Failed. Try again."
+        redirect_to @experience.game
+      end
     end
 
 private
