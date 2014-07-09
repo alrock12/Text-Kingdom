@@ -59,7 +59,7 @@
 			  <td><%= total_plays_of_author(user) %></td> 
 			  <td><%= avg_ratings_of_author(user) %></td>
 			  <td><%= top_game(user) %></td>
-			  <td><%= link_to "Play!", '#', class: "play-now btn" %></td>
+			  <td><%= link_to "Play!", game_path(top_game_record(user)), class: "play-now btn" %></td>
 			</tr>
 		<% end %>
   	  </table>
