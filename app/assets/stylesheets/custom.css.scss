@@ -206,3 +206,41 @@ table{
     width: 80px;
   }
 }
+
+/* Forms */
+
+.form-container{
+  position: relative;
+  margin-top: 30px;
+  border: 2px solid #BBB;
+  border-radius: 15px;
+  background-color: black;
+  width: 400px;
+  padding: 40px 0px 30px 0px;
+  a:hover{
+    color: #AAA;
+    text-decoration: none;
+  }
+  
+}
+
+.label, .input{
+  margin-bottom: 15px;
+  /*position: absolute;*/
+}
+
+.label {
+  color: white;
+  text-align: left;
+  /*left: 15%;*/
+}
+
+.input {
+  border-radius: 5px;
+  /*right: 15%;*/
+  width: 45%;
+}
+
+.form-container p {
+  color: white;
+}
