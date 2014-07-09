@@ -33,6 +33,20 @@ module UsersHelper
     end
   end
 
+  def top_game_record(user)
+    highest_rated_game = user.games[0]
+    if !highest_rated_game.nil?
+      user.games.each do |game|
+       if avg_game_rating(game) > avg_game_rating(highest_rated_game)
+         highest_rated_game = game
+        end
+      end
+      return highest_rated_game
+    else
+      return none
+    end
+  end
+
   def num_games_played(user)
     user.experiences.uniq.count
   end

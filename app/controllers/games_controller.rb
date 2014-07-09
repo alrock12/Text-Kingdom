@@ -8,6 +8,7 @@ class GamesController < ApplicationController
 
    def create
     @game = Game.new(game_params)
+    @game.user = current_user
     if @game.save
       flash[:success] = "Your game is live!"
       redirect_to @game
@@ -17,7 +18,7 @@ class GamesController < ApplicationController
    end
 
    def show
-    @game = Game.find(params[:id])
+    @game = Game.find(4)
    end
 
   def index
@@ -25,10 +26,6 @@ class GamesController < ApplicationController
     @game_newest = Game.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     @game_week = Game.games_week.paginate(page: params[:page], per_page: 10)
     @game_year = Game.games_year.paginate(page: params[:page], per_page: 10) 
-  end
-
-  def show
-    ##lead \game page
   end
 
   private
